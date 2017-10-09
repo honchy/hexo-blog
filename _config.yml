@@ -70,5 +70,5 @@ theme: landscape
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:honchy/honchy.github.io.git
+  repo: git@github.com-honchy:honchy/honchy.github.io.git
   branch: master
