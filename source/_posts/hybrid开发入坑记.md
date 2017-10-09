@@ -4,7 +4,7 @@ tags:
 ---
 
 缘起
----
+===
 
 hybrid 是平衡用户体验和开发效率的一种方案。
 
@@ -17,24 +17,24 @@ hybrid 是平衡用户体验和开发效率的一种方案。
 
 
 native和js通信
----
+===
 
 hybrid开发核心的一个基础技术点就是native和js之间的通信。
 
 ios UIWebView和native通信
-===
+---
 
 ios WKWebView和native通信
-===
+---
 
 ios javascriptcore和native通信
-===
+---
 
 android webview和native通信
-===
+---
 
 整体设计
----
+===
 
 解决了通信的问题以后，就可以设计整体的信息流，结构组成和时序。
 
