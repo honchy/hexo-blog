@@ -40,4 +40,20 @@ hybrid开发核心的一个基础技术点就是native和js之间的通信。
 
 ### 信息流
 
+0. 打包过程中，直接取默认的初始数据，生成静态html，渲染。
+1. WebView 向 JavascriptCore传递交互事件，然后JavaScriptCore更新数据生成DomDiffPatches。
+2. JavascriptCore向WebView传递DomDiffPatches，然后WebView更新View。
+
+整个交互过程初始化由WebView的交互事件驱动整个应用状态的迁移。这样，WebView可以掌握交互和处理dom更新的时机。
+
+### 结构组成
+
+0. 打包预处理
+1. webview javascriptcore native 通信模块
+2. 应用视图栈管理
+3. webview UI 组件化方案和事件代理
+4. 虚拟dom引擎
+5. 网络通信模块
+6. 性能监控
+7. 应用生命周期管理
 
