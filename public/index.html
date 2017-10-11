@@ -95,12 +95,28 @@
 <p>现在微信小程序的出现，有了一种新的做法和思路，分离UI展现部分和逻辑计算部分。DOM界面的绘制完全在webview中进行而逻辑计算均在javascriptcore中进行。</p>
 <p>刚刚入坑hybrid开发，从微信小程序的这个思路出发造轮子。</p>
 <h2 id="native和js通信"><a href="#native和js通信" class="headerlink" title="native和js通信"></a>native和js通信</h2><p>hybrid开发核心的一个基础技术点就是native和js之间的通信。</p>
-<h1 id="ios-UIWebView和native通信"><a href="#ios-UIWebView和native通信" class="headerlink" title="ios UIWebView和native通信"></a>ios UIWebView和native通信</h1><h1 id="ios-WKWebView和native通信"><a href="#ios-WKWebView和native通信" class="headerlink" title="ios WKWebView和native通信"></a>ios WKWebView和native通信</h1><h1 id="ios-javascriptcore和native通信"><a href="#ios-javascriptcore和native通信" class="headerlink" title="ios javascriptcore和native通信"></a>ios javascriptcore和native通信</h1><h1 id="android-webview和native通信"><a href="#android-webview和native通信" class="headerlink" title="android webview和native通信"></a>android webview和native通信</h1><h2 id="整体设计"><a href="#整体设计" class="headerlink" title="整体设计"></a>整体设计</h2><p>解决了通信的问题以后，就可以设计整体的信息流，结构组成和时序。</p>
+<h3 id="ios-UIWebView和native通信"><a href="#ios-UIWebView和native通信" class="headerlink" title="ios UIWebView和native通信"></a>ios UIWebView和native通信</h3><h3 id="ios-WKWebView和native通信"><a href="#ios-WKWebView和native通信" class="headerlink" title="ios WKWebView和native通信"></a>ios WKWebView和native通信</h3><h3 id="ios-javascriptcore和native通信"><a href="#ios-javascriptcore和native通信" class="headerlink" title="ios javascriptcore和native通信"></a>ios javascriptcore和native通信</h3><h3 id="android-webview和native通信"><a href="#android-webview和native通信" class="headerlink" title="android webview和native通信"></a>android webview和native通信</h3><h2 id="整体设计"><a href="#整体设计" class="headerlink" title="整体设计"></a>整体设计</h2><p>解决了通信的问题以后，就可以设计整体的信息流，结构组成和时序。</p>
+<h3 id="信息流"><a href="#信息流" class="headerlink" title="信息流"></a>信息流</h3><ol>
+<li>打包过程中，直接取默认的初始数据，生成静态html，渲染。</li>
+<li>WebView 向 JavascriptCore传递交互事件，然后JavaScriptCore更新数据生成DomDiffPatches。</li>
+<li>JavascriptCore向WebView传递DomDiffPatches，然后WebView更新View。</li>
+</ol>
+<p>整个交互过程初始化由WebView的交互事件驱动整个应用状态的迁移。这样，WebView可以掌握交互和处理dom更新的时机。</p>
+<h3 id="结构组成"><a href="#结构组成" class="headerlink" title="结构组成"></a>结构组成</h3><ol>
+<li>打包预处理</li>
+<li>webview javascriptcore native 通信模块</li>
+<li>应用视图栈管理</li>
+<li>webview UI 组件化方案和事件代理</li>
+<li>虚拟dom引擎</li>
+<li>网络通信模块</li>
+<li>性能监控</li>
+<li>应用生命周期管理</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2017/10/09/hybrid开发入坑记/" data-id="cj8kbgj0300027kcfwul8ti7g" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2017/10/09/hybrid开发入坑记/" data-id="cj8lr6xaf0000nkcfyg2g615z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2017/09/10/windows10-利用docker搭建开发环境/" data-id="cj8kbgj0800047kcf2k7cvw6r" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2017/09/10/windows10-利用docker搭建开发环境/" data-id="cj8lr6xau0003nkcf121a56zd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2017/09/08/测试/" data-id="cj8kbgj0500037kcfsmmc83pn" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2017/09/08/测试/" data-id="cj8lr6xb50005nkcfe89fw78k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2017/09/08/hello-world/" data-id="cj8kbgizz00017kcfc2ftczr6" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2017/09/08/hello-world/" data-id="cj8lr6xan0001nkcf9y7ecxov" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2017/08/29/路由设计参考/" data-id="cj8kbgj0e00057kcfcurd8b01" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2017/08/29/路由设计参考/" data-id="cj8lr6xay0004nkcfopgxhww0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.honchy.cn/2015/06/29/index/" data-id="cj8kbgizr00007kcfquyyyhfx" class="article-share-link">Share</a>
+      <a data-url="http://www.honchy.cn/2015/06/29/index/" data-id="cj8lr6xas0002nkcf8b5c48wx" class="article-share-link">Share</a>
       
       
     </footer>
