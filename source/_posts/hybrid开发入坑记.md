@@ -114,6 +114,8 @@ const Button_Events = {
 ### 时序
 ```javascript
 
+[编译机器] 打包逻辑，分发框架层，业务jsc，业务webview，以及首屏css，其他css
+
 [native] 启动应用指定参数:app page param
 [native] 初始化应用javascriptcore，注入相关的扩展和框架代码bridge等
 [native] 初始化webview，注入相关的扩展和bridge等
