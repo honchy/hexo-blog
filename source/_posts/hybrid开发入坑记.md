@@ -131,6 +131,42 @@ const Button_Events = {
 [javascriptcore] 开始执行setData 输出domDiffPatches
 [webview] 接收到domDiffPatches，更新dom
 
-
-
 ```
+
+## objective-c 语言
+### 变量，表达式和基本流程控制
+
+变量，表达式和基本流程控制和一般的命令式控制语法基本一致。介绍几个特殊的变量
+
+### 面向对象
+
+1. 私有属性
+2. 访问器
+3. 属性特性
+4. 私有方法，类方法，实例方法
+5. 代理
+6. 协议
+7. 继承
+8. KVC
+9. KVO
+10. selector
+
+### 消息
+
+objective-c 语言底层有一层基于消息机制的通信的系统。
+
+### 内存管理
+
+arc 内存管理机制
+
+## ios 编程
+
+### application 生命周期
+### viewcontroller 生命周期
+### viewcontroller 导航视图栈控制方式
+### wkwebview 用法，wkwebview和native通信方式
+### javascriptcore用法，javascripotcore和native通信方式
+### 网络操作
+### 文件操作
+### 数据存取
+
